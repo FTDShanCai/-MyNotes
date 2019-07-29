@@ -23,6 +23,6 @@ DataBinding @BindingAdapter  注解自定义XML方法入口时，可以把(app�
 #2019年7月29日</br>
 
 3、 java中的内部类(非静态内部类)和嵌套类(静态内部类)的区别</br>
-内部类是非静态的内部类（实例化的话  B b = new A().new B()），嵌套类是静态的内部类(A.B b = new A.B())</br>
+内部类是非静态的内部类（实例化的话  A.B b = new A().new B(); ），嵌套类是静态的内部类( A.B b = new A.B(); )</br>
 
 
