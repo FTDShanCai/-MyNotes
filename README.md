@@ -15,7 +15,10 @@ DataBinding @BindingAdapter  注解自定义XML方法入口时，可以把(app�
     fun jointoString(s: CharSequence, a: String = "", aa: String = "")</br>
     | 扩展函数:</br>
      OkHttpClient.getConnectTimeout():Int = this.connectTimeoutMillis()</br>
-     不过有局限性，不能访问私有还有内部的属性，不过可以自定义一些返回参数组合还是挺好用的。
+     不过有局限性，不能访问私有还有内部的属性，不过可以自定义一些返回参数组合还是挺好用的。</br>
+    | 扩展属性:</br>
+         val String.lastChar: Char get() = get(length - 1)</br>
+     和扩展函数一样，必须有get函数， 类名.后面是属性名称(此属性名为 lastChar)。</br>
     
 
 
