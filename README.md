@@ -25,7 +25,26 @@ DataBinding @BindingAdapter  注解自定义XML方法入口时，可以把(app�
 3、 java中的内部类(非静态内部类)和嵌套类(静态内部类)的区别</br>
 内部类是非静态的内部类（实例化的话  A.B b = new A().new B(); ），嵌套类是静态的内部类( A.B b = new A.B(); )</br>
 
-4、Kotlin密封类  关键字sealed
-被这个关键字sealed修饰的类即为密封类，默认当前类为open类，即可有子类，而且所有的子类实现必须存在当前类中，如果用when判断的时候编译器会自动提示出需要增加的is 子类-> //TO-DO ,方便我们忘记修改这个类使用到的地方。</br>
+4、Kotlin密封类  关键字sealed</br>
+被这个关键字sealed修饰的类即为密封类，默认当前类为open</br>类，即可有子类，而且所有的子类实现必须存在当前类中，如果用when判断的时候编译器会自动提示出需要增加的is 子类-> //TO-DO ,方便我们忘记修改这个类使用到的地方。</br>
+
+#2019年7月30日</br>
+
+5、Kotlin中的== 和 ===</br>
+java 中 == 对于基础数据类型是比较的是值，对于引用类型比较的是引用地址。 </br>
+Kotlin == 比较的是值，相当于调用equals 来比较2个值是否相等，而 === 是对比2个值的引用地址 </br>
+
+6、Java 中的Object  和 Kotlin中的Any</br>
+java 和 kotlin 中的这2个都是最基本的类，可以代表所有类（包含null）</br>
+
+7、equals 与 hashCode 方法</br>
+这2个方法中的一个如果需要重写的话，从编码角度来说2个是需要一起重写的。</br>
+
+8、Kotlin 中 类委托机制 关键字by</br>
+如果想实现某些接口的类，而接口中需要实现的方法过多且与另外一个实现连多数实现方法相同时，就可以将新的实现类委托给相似的类，并重写不同的接口方法实现达成目的类。  </br>
+ class MyCollection<T>(list: Collection<T> = ArrayList()) : Collection<T> by list {</br>
+ }</br>
+注意：必须为interface才能用 by 关键字 ，如果是abstract类则不能用委托机制（设计如此，具体原因未知）。
+
 
 
