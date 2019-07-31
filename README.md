@@ -51,7 +51,7 @@ java 和 kotlin 中的这2个都是最基本的类，可以代表所有类（包
 
 9、kotlin 中的 object 和 companion object 的用法和区别</br>
 object 关键字表示当前类为静态类，其中所有的属性和方法都为静态方法，可以加入private constructor 可以禁止实例化此类。（全局静态）</br>
-companion object 是使用在类中，包含的为内部所有的静态属性和静态方法。（局部静态）</br>
+companion object 是使用在类中，包含的为内部所有的静态属性和静态方法，其可以实现interface接口方法或属性（kotlin中接口中可以包含未实现的属性）（局部静态）</br>
 
     
     
