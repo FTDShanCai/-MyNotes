@@ -45,7 +45,14 @@ java 和 kotlin 中的这2个都是最基本的类，可以代表所有类（包
 如果想实现某些接口的类，而接口中需要实现的方法过多且与另外一个实现连多数实现方法相同时，就可以将新的实现类委托给相似的类，并重写不同的接口方法实现达成目的类。  </br>
  class MyCollection<T>(list: Collection<T> = ArrayList()) : Collection<T> by list {</br>
  }</br>
-注意：必须为interface才能用 by 关键字 ，如果是abstract类则不能用委托机制（设计如此，具体原因未知）。
+注意：必须为interface才能用 by 关键字 ，如果是abstract类则不能用委托机制（设计如此，具体原因未知）。</br>
+
+9、kotlin 中的 object 和 companion object 的用法和区别</br>
+object 关键字表示当前类为静态类，其中所有的属性和方法都为静态方法，可以加入private constructor 可以禁止实例化此类。（全局静态）</br>
+companion object 是使用在类中，包含的为内部所有的静态属性和静态方。（局部静态））</br>
+
+    
+    
 
 
 
