@@ -55,6 +55,8 @@ companion object 是使用在类中，包含的为内部所有的静态属性和
 区别：object 修饰的类为静态类，companion object 只是局部的静态区域，object可以声明匿名内部类，比如</br>
       view.setOnclickListener(object:View.OnClickListener{...})</br>
     
+10、kotlin中的internal 关键字</br>
+internal修饰的属性、方法、类等 表示只在本模块内可见，模块的概念只的是当前module， IntelliJ IDEA 模块或者一个maven工程，一个gradle工程。</br>
 
 
 
