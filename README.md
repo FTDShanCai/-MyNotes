@@ -58,5 +58,7 @@ companion object 是使用在类中，包含的为内部所有的静态属性和
 10、kotlin中的internal 关键字</br>
 internal修饰的属性、方法、类等 表示只在本模块内可见，模块的概念只的是当前module， IntelliJ IDEA 模块或者一个maven工程，一个gradle工程。</br>
 
+11、kotlin中的双冒号 :: 的含义</br>
+木有看懂， 支持函数，有时候跟this:: 一起用，有时候单独用。 跨过去回头仔细研究一波</br>
 
 
