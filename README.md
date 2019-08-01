@@ -47,7 +47,7 @@ java 和 kotlin 中的这2个都是最基本的类，可以代表所有类（包
  }</br>
 注意：必须为interface才能用 by 关键字 ，如果是abstract类则不能用委托机制（设计如此，具体原因未知）。</br>
 
->>>>2019年7月31日</br>
+>>2019年7月31日</br>
 
 >10、kotlin 中的 object 和 companion object 的用法和区别</br>
 object 关键字表示当前类为静态类，其中所有的属性和方法都为静态方法，可以加入private constructor 可以禁止实例化此类。（全局静态）</br>
