@@ -1,4 +1,4 @@
-kotlin 自学笔记
+kotlin 
 =
 ### README编辑教程[外链](https://blog.csdn.net/luofeixiongsix/article/details/80841575 "外链")
 
@@ -51,40 +51,48 @@ java 和 kotlin 中的这2个都是最基本的类，可以代表所有类（包
 
 如果想实现某些接口的类，而接口中需要实现的方法过多且与另外一个实现连多数实现方法相同时，就可以将新的实现类委托给相似的类，并重写不同的接口方法实现达成目的类。
 
-```class MyCollection<T>(list: Collection<T> = ArrayList()) : Collection<T> by list {</br>
-   ......
-   }</br>
 ```
-注意：必须为interface才能用 by 关键字 ，如果是abstract类则不能用委托机制（设计如此，具体原因未知）。</br>
+   class MyCollection<T>(list: Collection<T> = ArrayList()) : Collection<T> by list {
+   ......
+   }
+```
+注意：必须为interface才能用 by 关键字 ，如果是abstract类则不能用委托机制（设计如此，具体原因未知）。
 
->>2019年7月31日</br>
 
->10、kotlin 中的 object 和 companion object 的用法和区别</br>
-object 关键字表示当前类为静态类，其中所有的属性和方法都为静态方法，可以加入private constructor 可以禁止实例化此类。（全局静态）</br>
-companion object 是使用在类中，包含的为内部所有的静态属性和静态方法，其可以实现interface接口方法或属性（kotlin中接口中可以包含未实现的属性）（局部静态）</br>
-区别：object 修饰的类为静态类，companion object 只是局部的静态区域，object可以声明匿名内部类，比如</br>
-      view.setOnclickListener(object:View.OnClickListener{...})</br>
+### kotlin 中的 object 和 companion object 的用法和区别
+
+| object 关键字表示当前类为静态类，其中所有的属性和方法都为静态方法，可以加入private constructor 可以禁止实例化此类。（全局静态）
+
+| companion object 是使用在类中，包含的为内部所有的静态属性和静态方法，其可以实现interface接口方法或属性（kotlin中接口中可以包含未实现的属性）（局部静态）
+
+| 区别：object 修饰的类为静态类，companion object 只是局部的静态区域，object可以声明匿名内部类，比如
+      ```
+      view.setOnclickListener(object:View.OnClickListener{...})
+      ```
     
->11、kotlin中的internal 关键字</br>
-internal修饰的属性、方法、类等 表示只在本模块内可见，模块的概念只的是当前module， IntelliJ IDEA 模块或者一个maven工程，一个gradle工程。</br>
+### kotlin中的internal 关键字
 
->12、kotlin中的双冒号 :: 的含义</br>
-木有看懂， 支持函数，有时候跟this:: 一起用，有时候单独用。 跨过去回头仔细研究一波</br>
+internal修饰的属性、方法、类等 表示只在本模块内可见，模块的概念只的是当前module， IntelliJ IDEA 模块或者一个maven工程，一个gradle工程。
 
->>2019年8月1日</br>
+### kotlin中的双冒号 :: 的含义
 
->13、Kotlin 比较不错的集合函数式</br>
-`filter`    过滤出来符合条件的集合。</br>
-`map`       根据当前集合类型转换成相等数量的另外一种类型的集合</br>
-`all`       如果集合内都符合条件，返回true，否则false</br>
-`any`       与all相反，集合中只要有任意一个符合条件 就返回true，否则false</br>
-`count`     获取符合条件的数量</br>
-`find`      获取第一个符合条件的集合对象，如果没有符合条件返回null,find 其实是调用的firstOrNull，类似的用法还有findlast，lastOrNull，                        indexOfLast,indexOfFirst等。</br>
-`groupBy`   可以把集合按照条件进行分组，符合条件的为一组，返回值为 Map<条件类型,T> </br>
-`flatMap`   可以把集合中的对象中的一个集合属性，合并所以集合中对象的这个集合属性成为一个新的集合。</br>
-`flatten`   平铺集合，具体使用没明白咋回事</br>
+木有看懂， 支持函数，有时候跟this:: 一起用，有时候单独用。 跨过去回头仔细研究一波
 
->14、kotlin 中的延迟加载 lateinit 关键字</br>
-lateinit 属于可以延迟加载，默认是为空，用的时候前在去实例化对象，而且关键点是`lateinit不支持基本类型，因为基本类型是不包含null值，比如int 默认值是为0，所以会编译报错`</br>
+### Kotlin 比较不错的集合函数式
+```
+`filter`    过滤出来符合条件的集合。
+`map`       根据当前集合类型转换成相等数量的另外一种类型的集合
+`all`       如果集合内都符合条件，返回true，否则false
+`any`       与all相反，集合中只要有任意一个符合条件 就返回true，否则false
+`count`     获取符合条件的数量
+`find`      获取第一个符合条件的集合对象，如果没有符合条件返回null,find 其实是调用的firstOrNull，类似的用法还有findlast，lastOrNull，                        indexOfLast,indexOfFirst等。
+`groupBy`   可以把集合按照条件进行分组，符合条件的为一组，返回值为 Map<条件类型,T> 
+`flatMap`   可以把集合中的对象中的一个集合属性，合并所以集合中对象的这个集合属性成为一个新的集合。
+`flatten`   平铺集合，具体使用没明白咋回事
+```
+
+### kotlin 中的延迟加载 lateinit 关键字
+
+lateinit 属于可以延迟加载，默认是为空，用的时候前在去实例化对象，而且关键点是`lateinit不支持基本类型，因为基本类型是不包含null值，比如int 默认值是为0，所以会编译报错`
 
  
