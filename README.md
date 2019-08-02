@@ -80,15 +80,15 @@ internal修饰的属性、方法、类等 表示只在本模块内可见，模�
 
 ### Kotlin 比较不错的集合函数式
 ```
-`filter`    过滤出来符合条件的集合。
-`map`       根据当前集合类型转换成相等数量的另外一种类型的集合
-`all`       如果集合内都符合条件，返回true，否则false
-`any`       与all相反，集合中只要有任意一个符合条件 就返回true，否则false
-`count`     获取符合条件的数量
-`find`      获取第一个符合条件的集合对象，如果没有符合条件返回null,find 其实是调用的firstOrNull，类似的用法还有findlast，lastOrNull，                        indexOfLast,indexOfFirst等。
-`groupBy`   可以把集合按照条件进行分组，符合条件的为一组，返回值为 Map<条件类型,T> 
-`flatMap`   可以把集合中的对象中的一个集合属性，合并所以集合中对象的这个集合属性成为一个新的集合。
-`flatten`   平铺集合，具体使用没明白咋回事
+filter    过滤出来符合条件的集合。
+map       根据当前集合类型转换成相等数量的另外一种类型的集合
+all       如果集合内都符合条件，返回true，否则false
+any       与all相反，集合中只要有任意一个符合条件 就返回true，否则false
+count     获取符合条件的数量
+find      获取第一个符合条件的集合对象，如果没有符合条件返回null,find 其实是调用的firstOrNull，类似的用法还有findlast，lastOrNull ,indexOfLast,indexOfFirst等。
+groupBy   可以把集合按照条件进行分组，符合条件的为一组，返回值为 Map<条件类型,T> 
+flatMap   可以把集合中的对象中的一个集合属性，合并所以集合中对象的这个集合属性成为一个新的集合。
+flatten   平铺集合，具体使用没明白咋回事
 ```
 
 ### kotlin 中的延迟加载 lateinit 关键字
