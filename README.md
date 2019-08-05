@@ -112,9 +112,35 @@ lateinit 属于可以延迟加载，默认是为空，用的时候前在去实�
 
 ### kotlin 对空值的处理
 ```
-a?.b=1                   如果a为空的话，对b的赋值操作不会执行
-a!!.b=1                  如果a为空的话，会直接抛出异常
-a?.b？:"null value" =1   如果a为空的话，会走：后面的逻辑，相当于java中的try cath 个人理解。
+a?.b=1      如果a为空的话，对b的赋值操作不会执行
+a!!.b=1     如果a为空的话，会直接抛出异常
+a?.b?:1     如果a为空的话，会走：后面的逻辑，相当于java中的try cath 个人理解。
+
+
+需要注意的一些点
+List<Int?>    与   List<Int>?   (要小心决定什么是可空的：集合的元素还是集合本身)这两个表示的可控性不一样，一个是List为空，但是集合中包含的元素可能为空，另外个是集合可能为空，但是包含元素肯定为Int类型
+
+filterNotNull 扩展函数可以过滤集合中不为空的对象并返回一个对象不为空的集合
+
+```
+
+### kotlin 中类型系统中比较常用的一些东西
+```
+as            安全转换  val str = object as String
+let函数       str?.let{...}  里面可以写关于str对象的一些逻辑，如果str为空的话将不会执行这部分代码。
+```
+
+### kotlin 中的集合与java中有什么区别
+```
+kotlin中集合分2种，只读集合(Collection)、可变集合(MutableCollection)
+
+只读集合如字面意义，长度固定，不能增加，值只有初次复制。
+
+可变集合就是可以增加删除集合内元素的集合，kotlin中通常用Array
+
+kotlin中引用java代码中的集合转义为只读集合的有（List、Set、Map、Collection、Iterable等）,在kotlin中都不能进行增加和删除操作。
+
+kotlin中引用java代码中的集合转义为可变集合的有(ArrayList、HashMap、HasSet等)，再空kotlin中都可以正常的增加或删除
 ```
 
  
