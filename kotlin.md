@@ -143,4 +143,33 @@ kotlin中引用java代码中的集合转义为只读集合的有（List、Set、
 kotlin中引用java代码中的集合转义为可变集合的有(ArrayList、HashMap、HasSet等)，再空kotlin中都可以正常的增加或删除
 ```
 
- 
+### kotlin 中贼强的重载二元运算符 可以使相同类型直接做二元运算
+```
+示例：
+
+data class Man(val rmb: Int) {
+   operator fun plus(other: Man): Int { //这块的返回类型可以自定义
+      return rmb + other.rmb  
+   }
+}
+
+fun main() {
+    val a = Man(1)  
+    val b = Man(2)
+    print(a + b) //直接用a+b返回了 2个Man对象的rmb和
+}
+Log:  3  
+
+关键字 operator  重载二元运算方法必须要带的关键字
+
+可重载的二元算术运算符：
+plus    加法      a + b
+minus   减法      a - b
+times   乘法      a * b
+div     除法      a / b
+mode    取余      a % b
+
+注意点：二元运算的时候是存在优先级的，比如 a+b*c  是会先计算b*c 然后再+a
+
+
+```
