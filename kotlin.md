@@ -143,12 +143,12 @@ kotlin中引用java代码中的集合转义为只读集合的有（List、Set、
 kotlin中引用java代码中的集合转义为可变集合的有(ArrayList、HashMap、HasSet等)，再空kotlin中都可以正常的增加或删除
 ```
 
-### kotlin 中贼强的重载二元运算符 可以使相同类型直接做二元运算
+### kotlin 中贼强的重载运算符（可以重载一元，二元，复合运算符，比较运算符不要太好用） 可以使相同类型直接做运算
 ```
-示例：
+示例：重载二元运算符 求2个人总共有多少钱
 
 data class Man(val rmb: Int) {
-   operator fun plus(other: Man): Int { //这块的返回类型可以自定义
+   operator fun plus(other: Man): Int { //这块可以自定义 传参类型 和 返回类型
       return rmb + other.rmb  
    }
 }
@@ -162,14 +162,71 @@ Log:  3
 
 关键字 operator  重载二元运算方法必须要带的关键字
 
+注意点：二元运算的时候是存在优先级的，比如 a+b*c  是会先计算b*c 然后再+a
+
+可重载的一元运算符:
+unaryPlus   正数      +a
+unaryMinus  负数      -a
+not         非        !a
+inc         自增      ++a,a++
+dec         自减      --a,a--
+
 可重载的二元算术运算符：
 plus    加法      a + b
 minus   减法      a - b
 times   乘法      a * b
 div     除法      a / b
 mode    取余      a % b
+```
 
-注意点：二元运算的时候是存在优先级的，比如 a+b*c  是会先计算b*c 然后再+a
+### kotlin 中对区间运算符的约定 (get、set)
 
+Get 其实就是 X[...]
+Set 其实就是 X[...] = value
 
 ```
+    =======================Get的用法=======================
+    data class People(val age: Int, val sex: String) 
+
+    operator fun People.get(int: Int): String { // 重写people类的区间方法（其中的传参和返回都可以自定义）
+        return when (int) {
+            1 -> age.toString()    返回年龄
+            2 -> sex               返回性别
+            else -> "error  index error"  返回错误
+        }
+    }
+
+    fun main() {
+        val man = People(18, "男")
+        println(man[1])
+        println(man[2])
+        println(man[3])
+    }
+    
+    Log: 18
+         男
+         error  index error
+        
+   =======================Set的用法=======================
+   
+    data class People(var age: Int, var sex: String) //属性变成var类型 可变了。
+
+    operator fun People.set(int: Int,value: String) {
+         when (int) {
+            1 -> age =value.toInt()      年龄赋值
+            2 -> sex=value               性别赋值
+            else -> println ("error  index error"）  错误
+        }
+    }
+
+    fun main() {
+        val man = People(18, "男")
+       man[1]= "17"
+       man[2]="女"
+       println(man)
+    }
+    
+    Log:  People(17,女)
+```
+
+
