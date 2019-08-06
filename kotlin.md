@@ -182,6 +182,7 @@ mode    取余      a % b
 ### kotlin 中对区间运算符的约定 (get、set)
 
 Get 其实就是 X[...]
+
 Set 其实就是 X[...] = value
 
 ```
