@@ -212,7 +212,7 @@ Set 其实就是 X[...] = value
    
     data class People(var age: Int, var sex: String) //属性变成var类型 可变了。
 
-    operator fun People.set(int: Int,value: String) {
+    operator fun People.set(int: Int,value: String) { //value 就是等号后面的值
          when (int) {
             1 -> age =value.toInt()      年龄赋值
             2 -> sex=value               性别赋值
@@ -222,7 +222,7 @@ Set 其实就是 X[...] = value
 
     fun main() {
         val man = People(18, "男")
-       man[1]= "17"
+       man[1]= "17"   
        man[2]="女"
        println(man)
     }
@@ -230,4 +230,25 @@ Set 其实就是 X[...] = value
     Log:  People(17,女)
 ```
 
+
+### kotlin 中运算符重载的总结
+
+| 目前为止，kotlin 中表现很多简单的运算，比如 val ints= 10..20  map["key"]  这些都是系统利用运算符重载了函数的 rangeTo ，get 等方法，其实有很多值的我们学习的运算符重载，我们可以利用当前简单的重载节省重复代码。而且更安全的处理一种类型，而往常java能给我们的只是提供公共函数去根据返回值或者一些进行判断。而kotlin是直接去修改约定、运算符的重载，这种会非常的便捷。
+
+
+### kotlin 中解构声明和组件函数
+
+解构声明：
+```
+    data class People(val age: Int, val sex: String)
+  
+  
+    fun main() {
+        val people = People(26,"男")
+        val (age,sex) =people   // 用初始化People类相同的常量，取得people 的 age，sex的值，当然类型也是一样的
+        println("$age  $sex")
+    }
+    
+    Log: 26  男
+```
 
