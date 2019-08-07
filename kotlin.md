@@ -252,3 +252,44 @@ Set 其实就是 X[...] = value
     Log: 26  男
 ```
 
+
+###  kotlin 中的函数是可以传一个lambda 作为参数或者 已lambda作为返回值。
+
+作为参数：
+```
+    定义一个lambda作为参数的numbers方法
+    fun numbers(n: (Int, Int) -> Int): Int {
+        val result = n(3, 3) //lambda 求值
+        return result * 10 //  求值后进行的一些操作，此处乘10
+    }
+    
+     fun main(){
+        val jia: (Int, Int) -> Int = { x, y -> x + y }  
+        val jian: (Int, Int) -> Int = { x, y -> x - y }
+        println("${numbers(jia)}  ${numbers(jian)}")
+    }
+
+    Log： 60    0
+
+```
+
+作为返回值
+```
+    class People(val age: Int, val name: String)
+    fun test() {
+        val list = listOf(People(20, "张三"), People(25, "李四"))
+        val n = list[0].filter(getFilter())
+        print("$n")
+    }
+    //定义People的扩展函数filter
+    fun People.filter(predicate: (People) -> Boolean): Int {
+        return if (predicate(this)) 0 else 1  //如果满足函数式 返回0，不满足函数式返回1
+    }
+    //getFilter 函数式作为过滤条件 大于25岁的
+    fun getFilter(): (People) -> Boolean {
+        return { p: People -> p.age > 25 }
+    }
+    Log:1
+```
+
+
