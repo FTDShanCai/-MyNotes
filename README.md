@@ -1,3 +1,6 @@
-# 个人记录学习笔记
+# 静下心来
 
-### 冰冻三尺非一日之寒
+#### [README编辑教程](https://blog.csdn.net/luofeixiongsix/article/details/80841575 "教程")
+
+#### [kotlin学习记录](https://github.com/FTDShanCai/-MyNotes/blob/master/android/kotlin/kotlin.md "kotlin")
+
