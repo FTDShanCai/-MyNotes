@@ -1,11 +1,6 @@
 kotlin 
 =
 
-### @BindingAdapter  Application namespace for attribute app:items will be ignored.
-
-DataBinding @BindingAdapter  注解自定义XML方法入口时，可以把(app：xxxx)修改为(xxxx)
-
-
 ### Kotlin 相比java 比较不错的地方
 
     | 方法的重载:
