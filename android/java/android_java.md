@@ -21,10 +21,10 @@ implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha3'
 
 >> Transition 标签下的属性
 
-> constraintSetStart   约束开始的设置
+* constraintSetStart   约束开始的设置
 
-> constraintSetEnd     约束结束的设置
+* constraintSetEnd     约束结束的设置
 
-> duration             过度的时间
+* duration             过度的时间
  
  
