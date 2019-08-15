@@ -17,6 +17,11 @@ implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha3'
 
 * MotionScene 标签的xml文件
 
-|  其中包含Transition,ConstraintSet,StateSet
+>  其中包含 Transition , ConstraintSet , StateSet
 
+>> Transition 标签下的属性
+* constraintSetStart   约束开始的设置
+* constraintSetEnd     约束结束的设置
+* duration             过度的时间
+ 
  
