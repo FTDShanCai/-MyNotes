@@ -77,6 +77,44 @@ spread_inside  展开(贴边)
 ```
 
 
+### 宽高比
+
+*  layout_constraintDimensionRatio 宽高比
+
+
+### 百分比布局
+
+*  layout_constraintWidth_percent 宽度百分比
+*  layout_constraintHeight_percent 高度百分比
+
+
+### 指导线  GuideLine
+
+```
+属于widget控件，可以设置方向 水平 or  垂直
+可以通过水平去对齐一些文案，偏左偏右什么的。
+```
+*  layout_constraintGuide_percent  水平线相对于父布局的百分比
+*  layout_constraintGuide_begin  水平线开始偏移距离
+*  layout_constraintGuide_end  水平线结束偏移距离
+
+### 屏障  Barrier
+
+```
+套在包含ids中所有空间的一层屏障，会根据中的ids的长度屏障会自动延长；
+需要对齐屏障外的可以根据barrier的id进行约束
+```
+
+* barrierDirection 屏障方向  上下左右
+* constraint_referenced_ids 屏障中控件的ids
+
+### 组  Group
+
+```
+可以将大部分控件放进组里，对组做隐藏和显示操作，就会自动隐藏或者显示组里的成员
+```
+
+* constraint_referenced_ids  组中控件的ids
 
 
 
