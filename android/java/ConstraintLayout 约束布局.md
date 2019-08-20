@@ -7,6 +7,7 @@ implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha3'
 
 ```
 
+
 ###  基础相对属性
 
 其意思就是本布局的左或右约束在目标布局的左边或者右边
@@ -21,7 +22,7 @@ implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha3'
 *  layout_constraintRight_toRightOf
 *  layout_constraintRight_toLeftOf
 
-##### 这一组如果敲出来其实没有什么区别，但是其实是有区别的，start 和 end相关是支持RTL布局，什么是RTL布局?[猛戳]('https://blog.csdn.net/azhengye/article/details/79460413')
+##### 这一组如果敲出来其实没有什么区别，但是其实是有区别的，start 和 end相关是支持RTL布局，什么是RTL布局?[猛戳](https://blog.csdn.net/azhengye/article/details/79460413)
 
 ##### 所以说推荐用start 和 end 相关组合，尽量不要用left 和  right
 
@@ -32,16 +33,21 @@ implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha3'
 *  layout_constraintBottom_toBottomOf
 *  layout_constraintBottom_toTopOf
 
+
+
 ###  角度依赖
 
 * layout_constraintCircle     添加角度依赖目标
 * layout_constraintCircleAngle  角度（默认0，目标上面）
 * layout_constraintCircleRadius  半径
 
+
+
 ###  权重weight
 
 * layout_constraintHorizontal_weight 水平权重
 * layout_constraintVertical_weight  垂直权重
+
 
 
 ###  偏移 bias
@@ -54,6 +60,23 @@ implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha3'
 不然的话，这个属性是不会起作用的。
 ```
 
+
+
 ###  约束链  Chain Style
+
+* layout_constraintHorizontal_chainStyle 横向约束链
+* layout_constraintVertical_chainStyle  垂直约束链
+
+
+
+##### 这个东西其实就是去找设置属性的这个布局的相关横向或者垂直方向的约束关系，然后去统一去设置 三个属性其中之一
+```
+packed  拥挤 挤在一起
+spread  展开（不贴边）
+spread_inside  展开(贴边)
+```
+
+
+
 
 
