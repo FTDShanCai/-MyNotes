@@ -15,3 +15,17 @@ SELECT * FROM user_info ORDER BY user_info.username DESC
 
 ### ASC 升序(默认升序)
 SELECT * FROM user_info ORDER BY user_info.username ASC
+
+### WHERE 查找
+SELECT * FROM user_info  WHERE user_info.username = '奇德'
+```
+等于 = 
+不等于 <>
+不等于 !=
+小于 <
+小于等于 <=
+大于 >
+大于等于 >=
+BETEEN  x  AND  y   xy区间的值
+```
+
