@@ -187,7 +187,7 @@ pathRelative:
 X 轴是目标视图在路径范围内移动的方向，其中 0 为起始位置，1 为最终位置。Y 轴垂直于 X 轴，正值位于路径左侧，负值位于右侧；
 设置一个非零的 percentY 可使视图向一个方向或另一个方向呈弧形运动。因此，视图的初始位置为 (0,0)，最终位置为 (1,0)。
 ```
-[灵魂导图](https://github.com/FTDShanCai/-MyNotes/blob/master/Images/keyPositionType_pathRelative%E5%9D%90%E6%A0%87%E8%AF%B4%E6%98%8E.png) 
+![灵魂导图](https://github.com/FTDShanCai/-MyNotes/blob/master/Images/keyPositionType_pathRelative%E5%9D%90%E6%A0%87%E8%AF%B4%E6%98%8E.png) 
 
 
 KeyPosition
