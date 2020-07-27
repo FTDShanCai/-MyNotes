@@ -94,4 +94,118 @@ Transition
 帧播放时长,毫秒单位
 ```
 
+OnSwipe
+----
+```
+指定当用户在布局上滑动时要执行的操作.
+动画序列的速度和目标视图的动画受滑动速度和方向的影响，具体取决于您使用可选参数设置的限制.
+```
+
+##### app:touchAnchorId
+```
+在滑动之后移动的视图。
+```
+
+##### app:touchAnchorSide
+```
+滑动所固定到的目标视图的一侧。MotionLayout 将尝试在该固定点与用户手指之间保持恒定的距离。
+可接受的值包括 "left"、"right"、"top" 和 "bottom"。
+```
+
+##### app:dragDirection
+```
+用户滑动动作的方向。如果设置了此属性，此 <onSwipe> 将仅适用于沿特定方向的滑动。
+可接受的值包括 "dragLeft"、"dragRight"、"dragUp" 和 "dragDown"。
+```
+
+OnClick
+----
+```
+指定当用户点按特定视图时要执行的操作。
+单个 <Transition> 可以具有多个 <onClick> 节点，其中每个 <onClick> 可指定一个不同的目标视图和一个在点按此视图时要执行的其他操作。
+```
+
+##### app:targetId
+```
+受监控的视图。当用户点按此视图时，将会发生转换。
+```
+
+##### app:ClickAction
+```
+点按视图时要执行的操作. 
+transitionToStart 过度第一帧
+transitionToEnd   过度最后一帧
+jumpToStart  跳到第一帧
+jumpToEnd 跳到最后一帧
+toggle   开关状态
+```
+
+
+KeyFrameSet
+----
+```
+指定运动序列过程中视图的位置和属性。默认情况下，运动会从初始状态逐渐进入结束状态；
+通过使用 <KeyFrameSet>，您可以构建更复杂的运动。
+```
+
+
+KeyPosition
+----
+```
+指定视图在运动序列中特定时刻的位置。该属性用于调整默认的运动路径。
+```
+
+##### app:motionTarget
+```
+其运动由此 <KeyPosition> 控制的视图。
+```
+
+##### app:framePosition
+```
+1 到 99 之间的整数，用于指定运动序列中视图何时到达此 <KeyPosition> 指定的点。
+```
+
+##### app:percentX  app:percentY
+```
+指定视图应到达的位置。 keyPositionType 属性指定如何解释这些值。
+```
+
+
+##### app:keyPositionType
+```
+指定如何解释 percentX 和 percentY 值。
+
+parentRelative:  
+percentX 和 percentY 是相对于父视图指定的。X 为横轴，范围从 0（左端）到 1（右端）。Y 为纵轴，其中 0 为顶部，1 为底部。
+
+
+deltaRelative:   
+percentX 和 percentY 是相对于视图在整个运动序列过程中移动的距离指定的。X 为横轴，Y 为纵轴；在这两种情况下，0 为视图在该轴上的起始位置，1 为最终位置。
+
+
+pathRelative:
+X 轴是目标视图在路径范围内移动的方向，其中 0 为起始位置，1 为最终位置。Y 轴垂直于 X 轴，正值位于路径左侧，负值位于右侧；
+设置一个非零的 percentY 可使视图向一个方向或另一个方向呈弧形运动。因此，视图的初始位置为 (0,0)，最终位置为 (1,0)。
+```
+
+KeyPosition
+----
+```
+指定运动序列中特定时刻的视图属性。您可以使用 <KeyAttribute> 设置视图的任何标准属性。
+android:visibility
+android:alpha
+android:elevation
+android:rotation
+android:rotationX
+android:rotationY
+transitionPathRotate
+android:scaleX
+android:scaleY
+android:translationX
+android:translationY
+android:translationZ
+```
+
+
+
 
